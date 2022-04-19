@@ -1,0 +1,48 @@
+.body {
+    background: #2b5876;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4e4376, #2b5876);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+body {
+    background-image: radial-gradient(circle at 25.21% 47.83%, #7975cb 0, #505495 25%, #2c3360 50%, #0d152f 75%, #000000 100%);
+}
+
+.b3 {
+    background-image: radial-gradient(circle at 25.21% 47.83%, #7975cb 0, #505495 25%, #2c3360 50%, #0d152f 75%, #000000 100%);
+}
+
+.b2 {
+    background-image: radial-gradient(circle at 55.99% 50%, #7a797c 0, #59556e 25%, #2c3360 50%, #001753 75%, #000047 100%);
+}
+
+.logo {
+    width: 30%;
+}
+
+.logo1 {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 10%;
+}
+.Alta {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 5px;
+    width: 85px; 
+    height: 85px;
+}
+
+.myDiv {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 12px;
+      
+  }
+.nav3 {
+    padding-bottom: 0;
+}  

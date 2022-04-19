@@ -1,0 +1,69 @@
+<div class="row myDiv">
+    {{#each NotasL}}
+    <div class="col-md-3">
+        <div class="card ">
+            <div class="card-body d-grid gap-2">
+                <h4 class="card-title  d-flex  justify-content-between align-items-center">
+                    {{titulo}} <a href="/notes/edit/{{_id}}"><i class="fa-solid fa-highlighter"></i></a>
+                </h4>
+                <hr class="my-1">
+                <p class="card-title  d-flex  justify-content-between align-items-center">
+                    {{descripcion}}
+                    <a href="/notes/delete/{{_id}}" class="d-grid gap-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <i class="fa-solid fa-trash-can">
+                        </i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Estas seguro de Borrar la tarea
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href="/notes/delete/{{_id}}">
+                        <button type="button" class="btn btn-primary">Confirmar</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{else}}
+
+
+    {{/each}}
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body d-grid gap-2">
+
+                <div class="d-grid gap-2 " align="center">
+                    <a class="navbar-brand  " href="/notes/add"><img class="Alta" src="/img/carrito.webp"
+                            alt="Alta de Notas" />
+                        <div class="nav-item secondary-cta ">
+                            <h6>Alta de notas</h6>
+                        </div>
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
