@@ -53,6 +53,7 @@ app.use((req,res)=>{
     res.locals.fallido_mensaje = req.flash('fallido_mensaje');
     res.locals.error = req.flash('error');
     res.locals.error1 = req.flash('error1');
+    res.locals.usuarioGlo = req.user || null;
     req.next();
 });
 

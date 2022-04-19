@@ -5,4 +5,8 @@ router.get('/',noAutenticado,(req,res)=>{
     res.render('index');
 })
 
-router.get('/about',noAut
+router.get('/about',noAutenticado,(req,res)=>{
+    res.render('about');
+})
+
+module.exports = router;

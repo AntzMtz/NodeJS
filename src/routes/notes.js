@@ -24,7 +24,8 @@ router.post('/notes/add', autenticar , async (req, res) => {
             descripcion
         });
     } else {
-        const notas = new note({titulo, descripcion});
+        const usuario = req.user.nombre;
+        const notas = new note({titulo, descripcion,usuario});
         await notas.save();
         req.flash('exitoso_mensaje',"Se agrego de forma satisfactoria");
         res.redirect('/notes');
@@ -33,7 +34,7 @@ router.post('/notes/add', autenticar , async (req, res) => {
 });
 
 router.get('/notes',autenticar, async (req, res) => {
-    const NotasL = await note.find({}).sort({fecha:'desc'});
+    const NotasL = await note.find({usuario: req.user.nombre}).sort({fecha:'desc'});
     res.render('notes/notes', {NotasL})
 });
 
@@ -68,4 +69,11 @@ router.post('/notes/edit/:id',autenticar, async (req, res) => {
     }
     try{
         await note.findOneAndUpdate({ _id: dato }, { $set: { titulo: titulo, descripcion: descripcion } })
-        req.flash('exitoso_mensaje','Se Actualizo De Forma Correcta L
+        req.flash('exitoso_mensaje','Se Actualizo De Forma Correcta La Tarea');
+    }catch(e){
+        console.log(e);
+    }
+    res.redirect('/notes');
+
+});
+module.exports = router;

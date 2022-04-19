@@ -14,7 +14,7 @@ pass.use(new passlocal({
     }else{
         const match = await usuario.desencpassword(password);
         if(match){
-            return done(null,usuario);
+            return done(null,usuario,{message: "usuarioGlo"});
         }else{
             return done(null,false,{message: 'Password incorrecto'});
         }
@@ -27,4 +27,6 @@ pass.serializeUser((user,done) => {
 
 pass.deserializeUser((id,done) => {
     usr.findById(id,(err,user)=>{
-        
+        done(err, user);
+    });
+});

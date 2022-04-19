@@ -73,4 +73,20 @@ router.post('/users/signup',noAutenticado, async (req, res) => {
             }
             res.render('users/signup', {
                 error1,
-                n
+                nombre,
+                correo
+            }); 
+           
+        }
+        
+        
+    }
+    
+});
+
+router.get('/users/logout', (req, res)=>{
+    req.logout();
+    res.redirect('/')
+});
+
+module.exports = router;
